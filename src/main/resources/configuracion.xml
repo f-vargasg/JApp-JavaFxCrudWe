@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<appProperties-definition>
+    <!--
+    tag "defaultConnection is "deprecated"
+    -->
+    <defaultConnection>9</defaultConnection>
+    <!-- activeConnections is deprecated-->
+    <activeConnections>22</activeConnections>
+        <connections default ="conn1">
+        <connection>
+            <dbIdConn>conn1</dbIdConn>
+            <dbDriver>org.mariadb.jdbc.Driver</dbDriver>
+            <dbUrl>jdbc:mariadb://10.25.1.86:3306/TESTDB</dbUrl>
+            <dbUsuario>root</dbUsuario>
+            <dbPassw>valerie5250</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbIdConn>conn2</dbIdConn>            
+            <dbDriver>org.hsqldb.jdbc.JDBCDriver</dbDriver>
+            <dbUrl>jdbc:hsqldb:hsql://localhost/enrolments;close_result=true</dbUrl>
+            <dbUsuario>SA</dbUsuario>
+            <dbPassw></dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>        
+        <connection>
+            <dbIdConn>conn3</dbIdConn>                        
+            <dbDriver>com.mysql.jdbc.Driver</dbDriver>
+            <dbUrl>jdbc:mysql://10.25.1.86:3306/auditDb</dbUrl>
+            <dbUsuario>root</dbUsuario>
+            <dbPassw>valerie5250</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbIdConn>conn4</dbIdConn>            
+            <dbDriver>com.mysql.jdbc.Driver</dbDriver>
+            <dbUrl>jdbc:mysql://10.25.1.44:3306/auditDb</dbUrl>
+            <dbUsuario>root</dbUsuario>
+            <dbPassw>valerie5250</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbDriver>oracle.jdbc.OracleDriver</dbDriver>
+            <dbUrl>jdbc:oracle:thin:@//10.25.1.48:1521/miDbModel</dbUrl>
+            <dbUsuario>pruebas</dbUsuario>
+            <dbPassw>valerie5250</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+            <dbIdConn>conn5</dbIdConn>                        
+        </connection>
+        <connection>
+            <dbIdConn>conn6</dbIdConn>
+            <dbDriver>oracle.jdbc.OracleDriver</dbDriver>
+            <dbUrl>jdbc:oracle:thin:@//10.25.1.48:1521/orcl</dbUrl>
+            <dbUsuario>mytest</dbUsuario>
+            <dbPassw>mytest</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbIdConn>conn7</dbIdConn>                    
+            <dbDriver>oracle.jdbc.OracleDriver</dbDriver>
+            <dbUrl>jdbc:oracle:thin:@//10.25.1.48:1521/xe</dbUrl>
+            <dbUsuario>mytest</dbUsuario>
+            <dbPassw>oracle123</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbIdConn>conn8</dbIdConn>            
+            <dbDriver>org.mariadb.jdbc.Driver</dbDriver>
+            <dbUrl>jdbc:mariadb://10.25.1.86:3306/TESTDB</dbUrl>
+            <dbUsuario>root</dbUsuario>
+            <dbPassw>valerie5250</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>
+        <connection>
+            <dbIdConn>conn9</dbIdConn>                        
+            <dbDriver>oracle.jdbc.driver.OracleDriver</dbDriver>
+            <dbUrl>jdbc:oracle:thin:@10.25.1.85:1521:orclcdb</dbUrl>
+            <dbUsuario>MYTEST</dbUsuario>
+            <dbPassw>oracle</dbPassw>
+            <dbPoolInicial>5</dbPoolInicial>
+            <dbPoolMax>10</dbPoolMax>
+        </connection>        
+        <connection>
+            <dbIdConn>conn10</dbIdConn>                                    
+            <dbDriver>SQLite.JDBCDriver</dbDriver>
+            <dbUrl>jdbc:sqlite:C:\Users\garfi\OneDrive\Documentos\MyProyects\SqlLite\mydatabase.db</dbUrl>
+            <dbUsuario/>
+            <dbPassw/>
+            <dbPoolInicial/>
+            <dbPoolMax/>
+        </connection> 
+        <connection>
+            <dbIdConn>conn11</dbIdConn>            
+            <dbDriver>org.hsqldb.jdbc.JDBCDriver</dbDriver>
+            <dbUrl>jdbc:hsqldb:file:C:\Users\garfi\OneDrive\Documentos\hsqldbDbs\TestDb\Ejemplo</dbUrl>
+            <dbUsuario>SA</dbUsuario>
+            <dbPassw></dbPassw>
+            <dbPoolInicial></dbPoolInicial>
+            <dbPoolMax></dbPoolMax>
+        </connection>        
+    </connections>
+    <numRegsLRUtoShow>10</numRegsLRUtoShow>
+    <directoyData>C:\Users\fvargas\Documents\trash\data</directoyData>
+    <!-- Emulacion de parametros -->
+    <!-- Con estos parametros se va a cargar el map para las rutas donde se cargan los archivos -->
+    <params> 
+        <param id= "nameArchPadron" value ="PADRON_EXTERNO_MARZO 2018.txt" />
+        <param id="nameArchDefunc" value="MAESTRO_DEFUNCIONES_MARZO 2017.txt"/>
+        <param id="nameArchNacim" value="MAESTRO_NACIMIENTOS_MARZO 2017.txt"/>
+        <param id="pathDefaultArchivos" value="C:\Users\garfi\Downloads\padron_completo"/>
+    </params>
+</appProperties-definition>

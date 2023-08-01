@@ -1,12 +1,15 @@
-package com.fvgprinc.app.crud;
+package com.fvgprinc.app.crudfx;
 
+import com.fvgprinc.app.crudfx.globals.GlobalConstants;
+import com.fvgprinc.tools.db.DIContainer;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+
 
 /**
  * JavaFX App
@@ -15,7 +18,6 @@ public class App extends Application {
 
     private static Scene scene;
 
-    @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("student"));
         stage.setTitle("Java Fx CRUD Application 2");
@@ -34,7 +36,11 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+       // System.out.println("com.fvgprinc.app.crudfx.App.main()");
+       DIContainer.registerDataManager(GlobalConstants.MARIADBCONN);
+       launch();
+               
+        // Test para las rutinas de BD y conexión
     }
 
 }
