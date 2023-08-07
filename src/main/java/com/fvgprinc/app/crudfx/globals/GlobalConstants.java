@@ -19,6 +19,9 @@ public class GlobalConstants {
 
     // Conection to SQLite
     public static final String SQLITECONN = "conn10";
+    
+        // Conection to SQLite
+    public static final String SQLITECONN2 = "conn12";
 
     // Conection to HsqlDb
     public static final String HSQLDBCONN = "conn11";

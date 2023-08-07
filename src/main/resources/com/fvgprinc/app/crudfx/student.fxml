@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="372.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.fvgprinc.app.crudfx.StudentController">
+<AnchorPane id="AnchorPane" prefHeight="491.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fvgprinc.app.crudfx.StudentController">
    <children>
       <GridPane layoutX="23.0" layoutY="45.0">
         <columnConstraints>
@@ -38,23 +37,23 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField />
-            <TextField prefWidth="190.0" GridPane.rowIndex="1" />
-            <TextField GridPane.rowIndex="2" />
+            <TextField fx:id="fieldFirstName" />
+            <TextField fx:id="fieldMiddleName" prefWidth="190.0" GridPane.rowIndex="1" />
+            <TextField fx:id="fieldLastName" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button layoutX="23.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="New" />
-      <Button layoutX="97.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Save" />
-      <Button layoutX="179.0" layoutY="150.0" mnemonicParsing="false" text="Update" />
-      <Button layoutX="268.0" layoutY="150.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id="btnNew" layoutX="23.0" layoutY="150.0" mnemonicParsing="false" onAction="#clickNew" prefHeight="25.0" prefWidth="51.0" text="New" />
+      <Button fx:id="btnSave" layoutX="97.0" layoutY="150.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="25.0" prefWidth="51.0" text="Save" />
+      <Button fx:id="btnUpdate" layoutX="179.0" layoutY="150.0" mnemonicParsing="false" onAction="#updateStudent" text="Update" />
+      <Button fx:id="btnDelete" layoutX="268.0" layoutY="150.0" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
       <Label layoutX="23.0" layoutY="192.0" text="Label" />
-      <TextField layoutX="74.0" layoutY="188.0" prefHeight="25.0" prefWidth="257.0" promptText="Search..." />
-      <TableView layoutX="14.0" layoutY="231.0" prefHeight="252.0" prefWidth="346.0">
+      <TextField fx:id="fieldSearch" layoutX="74.0" layoutY="188.0" prefHeight="25.0" prefWidth="257.0" promptText="Search..." />
+      <TableView fx:id="tableView" layoutX="14.0" layoutY="231.0" onMouseClicked="#mouseClicked" prefHeight="252.0" prefWidth="346.0">
         <columns>
-          <TableColumn minWidth="0.0" prefWidth="8.5" text="C1" />
-          <TableColumn prefWidth="141.5" text="FIRST NAME" />
-            <TableColumn prefWidth="102.5" text="MIDDLE NAME" />
-            <TableColumn prefWidth="92.5" text="LAST NAME" />
+          <TableColumn fx:id="colId" minWidth="0.0" prefWidth="8.5" text="C1" />
+          <TableColumn fx:id="colFirstName" prefWidth="141.5" text="FIRST NAME" />
+            <TableColumn fx:id="colMiddleName" prefWidth="102.5" text="MIDDLE NAME" />
+            <TableColumn fx:id="colLastName" prefWidth="92.5" text="LAST NAME" />
         </columns>
       </TableView>
    </children>

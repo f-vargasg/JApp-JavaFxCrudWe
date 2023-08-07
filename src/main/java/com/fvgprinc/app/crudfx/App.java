@@ -17,11 +17,14 @@ import javafx.stage.Stage;
 public class App extends Application {
 
     private static Scene scene;
+    private StudentController sController  = new StudentController();
 
     public void start(Stage stage) throws IOException {
+        // Init connections
+        DIContainer.registerDataManager(GlobalConstants.MARIADBCONN);
         scene = new Scene(loadFXML("student"));
         stage.setTitle("Java Fx CRUD Application 2");
-        
+        sController.setStage(stage);
         stage.setScene(scene);
         stage.show();
     }
@@ -37,7 +40,7 @@ public class App extends Application {
 
     public static void main(String[] args) {
        // System.out.println("com.fvgprinc.app.crudfx.App.main()");
-       DIContainer.registerDataManager(GlobalConstants.MARIADBCONN);
+        // DIContainer.registerDataManager(GlobalConstants.MARIADBCONN);  // Se pasó al start
        launch();
                
         // Test para las rutinas de BD y conexión

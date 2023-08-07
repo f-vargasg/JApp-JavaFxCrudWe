@@ -112,6 +112,16 @@ and open the template in the editor.
             <dbPoolInicial></dbPoolInicial>
             <dbPoolMax></dbPoolMax>
         </connection>        
+        <connection>
+            <dbIdConn>conn12</dbIdConn>                                    
+            <dbDriver>SQLite.JDBCDriver</dbDriver>
+            <dbUrl>jdbc:sqlite:C:\Users\garfi\OneDrive\Documentos\MyProyects\SqlLite\testDb.db</dbUrl>
+            <dbUsuario/>
+            <dbPassw/>
+            <dbPoolInicial/>
+            <dbPoolMax/>
+        </connection>         
+        
     </connections>
     <numRegsLRUtoShow>10</numRegsLRUtoShow>
     <directoyData>C:\Users\fvargas\Documents\trash\data</directoyData>

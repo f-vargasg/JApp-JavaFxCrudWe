@@ -12,4 +12,7 @@ module com.fvgprinc.app.crudfx {
 
     opens com.fvgprinc.app.crudfx to javafx.fxml;
     exports com.fvgprinc.app.crudfx;
+    exports com.fvgprinc.app.crudfx.be;
+    exports com.fvgprinc.app.crudfx.bl;
+    exports com.fvgprinc.app.crudfx.dl;
 }

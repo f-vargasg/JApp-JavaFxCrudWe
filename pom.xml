@@ -13,12 +13,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>13</version>
+            <version>20</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>13</version>
+            <version>20</version>
             <type>jar</type>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
@@ -64,7 +64,7 @@
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
-                <version>0.0.8</version>
+                <version>0.0.6</version>
                 <configuration>
                     <mainClass>com.fvgprinc.app.crudfx.App</mainClass>
                 </configuration>
