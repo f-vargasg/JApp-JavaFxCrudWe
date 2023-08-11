@@ -22,6 +22,7 @@ public class StudentDl extends Mapper {
     private final String TABLE_NAME = "student";
     private final String SELECT_STM = "Select * "
             + "from " + TABLE_NAME;
+    private final String WHERE_BY_PK = " where " + " id = ?";    
     private final String INSERT_STM = "insert into " + TABLE_NAME + " ("
             + " firstname,middlename,lastname ) values ("
             + "?,?,?)";
@@ -30,13 +31,17 @@ public class StudentDl extends Mapper {
             + "middlename = ? ,\n"
             + "lastname = ?  "
             + " where  id = ?";
+
+   private final String UPDATE_BY_PK_STM = "update " + TABLE_NAME + " set "
+            + "firstname = ? ,\n"
+            + "middlename = ? ,\n"
+            + "lastname = ?  "
+            + WHERE_BY_PK;    
     private final String DELETE_STM = "delete from " + TABLE_NAME;
 
-    private final String DELETE_BY_PK_STM = DELETE_STM + " where "
-            + " id = ?";
+    private final String DELETE_BY_PK_STM = DELETE_STM + WHERE_BY_PK;
 
-    private final String FIND_BY_PK_STM = SELECT_STM + " where "
-            + " id = ?";
+    private final String FIND_BY_PK_STM = SELECT_STM + WHERE_BY_PK;
 
     public StudentDl() {
         this.dm = DIContainer.getInstance().getDataManager(GlobalConstants.MARIADBCONN);
@@ -49,7 +54,7 @@ public class StudentDl extends Mapper {
 
     @Override
     public void update(ArrayList<ParamAction> paramDLs) throws SQLException {
-        doStatement(UPDATE_STM, paramDLs);
+        doStatement(UPDATE_BY_PK_STM, paramDLs);
     }
 
     @Override
