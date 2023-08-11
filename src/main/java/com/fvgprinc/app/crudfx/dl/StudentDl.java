@@ -19,24 +19,23 @@ import java.util.ArrayList;
  * @author garfi
  */
 public class StudentDl extends Mapper {
-
-    private final String tableName = "student";
-    private final String selectStm = "Select * "
-            + "from " + tableName;
-    private final String insertStm = "insert into " + tableName + " ("
+    private final String TABLE_NAME = "student";
+    private final String SELECT_STM = "Select * "
+            + "from " + TABLE_NAME;
+    private final String INSERT_STM = "insert into " + TABLE_NAME + " ("
             + " firstname,middlename,lastname ) values ("
             + "?,?,?)";
-    private final String updateStm = "update " + tableName + " set "
+    private final String UPDATE_STM = "update " + TABLE_NAME + " set "
             + "firstname = ? ,\n"
             + "middlename = ? ,\n"
             + "lastname = ?  "
             + " where  id = ?";
-    private final String deleteStm = "delete from " + tableName;
+    private final String DELETE_STM = "delete from " + TABLE_NAME;
 
-    private final String deleteByPkStm = deleteStm + " where "
+    private final String DELETE_BY_PK_STM = DELETE_STM + " where "
             + " id = ?";
 
-    private final String FindStm = selectStm + " where "
+    private final String FIND_BY_PK_STM = SELECT_STM + " where "
             + " id = ?";
 
     public StudentDl() {
@@ -45,17 +44,17 @@ public class StudentDl extends Mapper {
 
     @Override
     public void insert(ArrayList<ParamAction> paramDLs) throws SQLException {
-        doStatement(insertStm, paramDLs);
+        doStatement(INSERT_STM, paramDLs);
     }
 
     @Override
     public void update(ArrayList<ParamAction> paramDLs) throws SQLException {
-        doStatement(updateStm, paramDLs);
+        doStatement(UPDATE_STM, paramDLs);
     }
 
     @Override
     public void delete(ArrayList<ParamAction> keyFields) throws SQLException {
-        doStatement(deleteByPkStm, keyFields);
+        doStatement(DELETE_BY_PK_STM, keyFields);
     }
 
     @Override
@@ -73,7 +72,7 @@ public class StudentDl extends Mapper {
     @Override
     protected Object doFind(ArrayList<ParamAction> keyFiedls) throws SQLException {
         StudentBe studentBe = null;
-        ResultSet res = this.doStmReturnData(FindStm, keyFiedls);
+        ResultSet res = this.doStmReturnData(FIND_BY_PK_STM, keyFiedls);
         if (res.next()) {
             studentBe = (StudentBe) load(res);
         }
@@ -84,7 +83,7 @@ public class StudentDl extends Mapper {
     public ArrayList<StudentBe> listar(ArrayList<ParamAction> params) throws SQLException {
         ArrayList<StudentBe> lstRes = new ArrayList<>();
         String condSql = queryCond(params);
-        String sqlStm = selectStm + (condSql.length() > 0 ? " WHERE " : MyCommonString.EMPTYSTR)
+        String sqlStm = SELECT_STM + (condSql.length() > 0 ? " WHERE " : MyCommonString.EMPTYSTR)
                 + condSql;
         ResultSet rs = this.doStmReturnData(sqlStm, params);
         //PreparedStatement ps = this.doStmReturn(sqlStm, params);
