@@ -6,7 +6,7 @@ package com.fvgprinc.app.crudfx;
 
 import com.fvgprinc.app.crudfx.be.StudentBe;
 import com.fvgprinc.app.crudfx.bl.StudentBl;
-import com.fvgprinc.tools.common.string.MyCommonString;
+import com.fvgprinc.tools.string.MyCommonString;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;

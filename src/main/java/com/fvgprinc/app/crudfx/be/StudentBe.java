@@ -4,7 +4,8 @@
  */
 package com.fvgprinc.app.crudfx.be;
 
-import com.fvgprinc.tools.common.string.MyCommonString;
+import com.fvgprinc.tools.string.MyCommonString;
+
 
 /**
  *
