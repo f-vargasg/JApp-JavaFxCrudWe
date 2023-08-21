@@ -75,7 +75,7 @@ public class StudentDl extends Mapper {
     }
 
     @Override
-    protected Object doFind(ArrayList<ParamAction> keyFiedls) throws SQLException {
+    public Object doFind(ArrayList<ParamAction> keyFiedls) throws SQLException {
         StudentBe studentBe = null;
         ResultSet res = this.doStmReturnData(FIND_BY_PK_STM, keyFiedls);
         if (res.next()) {
