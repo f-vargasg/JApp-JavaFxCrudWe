@@ -10,6 +10,8 @@ import com.fvgprinc.tools.db.DIContainer;
 import com.fvgprinc.tools.db.Mapper;
 import com.fvgprinc.tools.db.ParamAction;
 import com.fvgprinc.tools.string.MyCommonString;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -77,31 +79,31 @@ public class StudentDl extends Mapper {
     @Override
     public Object doFind(ArrayList<ParamAction> keyFiedls) throws SQLException {
         StudentBe studentBe = null;
-        ResultSet res = this.doStmReturnData(FIND_BY_PK_STM, keyFiedls);
-        if (res.next()) {
-            studentBe = (StudentBe) load(res);
+        String wSql = FIND_BY_PK_STM;
+        try ( Connection conn = dm.getConnectioin();  PreparedStatement stm = conn.prepareStatement(wSql)) {
+            this.setParamPreparedStm(stm, keyFiedls);
+            try ( ResultSet rs = stm.executeQuery();) {
+                if (rs.next()) {
+                    studentBe = (StudentBe) load(rs);
+                }
+            }
         }
-        this.conn.close();
         return studentBe;
     }
 
     public ArrayList<StudentBe> listar(ArrayList<ParamAction> params) throws SQLException {
         ArrayList<StudentBe> lstRes = new ArrayList<>();
-        String condSql = queryCond(params);
-        String sqlStm = SELECT_STM + (condSql.length() > 0 ? " WHERE " : MyCommonString.EMPTYSTR)
-                + condSql;
-        ResultSet rs = this.doStmReturnData(sqlStm, params);
-        //PreparedStatement ps = this.doStmReturn(sqlStm, params);
-        //ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            StudentBe ub = (StudentBe) doLoad(rs);
-            lstRes.add(ub);
+        String condSql = ParamAction.queryCond(params);
+        String sqlStm = SELECT_STM + (condSql.length() > 0 ? " WHERE " : MyCommonString.EMPTYSTR) + condSql;
+        try ( Connection conn = dm.getConnectioin();  PreparedStatement ps = conn.prepareStatement(sqlStm)) {
+            this.setParamPreparedStm(ps, params);
+            try ( ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    StudentBe ub = (StudentBe) doLoad(rs);
+                    lstRes.add(ub);
+                }
+            }
         }
-        rs.close();
-        //ps.close();
-        this.conn.close();
-        //this.conn.close();
         return lstRes;
     }
-
 }
