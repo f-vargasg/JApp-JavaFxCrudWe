@@ -4,9 +4,9 @@ module com.fvgprinc.app.crudfx {
     requires javafx.fxml;
     requires java.base;
     requires org.apache.commons.configuration2;
-//     requires org.apache.commons.pool2;
     requires commons.dbcp2;
     requires java.sql;    
+    requires oraclepki;
     requires com.fvgprinc.tools.db;
     requires com.fvgprinc.tools.string;
 

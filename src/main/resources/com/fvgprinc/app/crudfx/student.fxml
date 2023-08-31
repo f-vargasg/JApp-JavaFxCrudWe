@@ -46,7 +46,7 @@
       <Button fx:id="btnSave" layoutX="97.0" layoutY="150.0" mnemonicParsing="false" onAction="#addStudent" prefHeight="25.0" prefWidth="51.0" text="Save" />
       <Button fx:id="btnUpdate" layoutX="179.0" layoutY="150.0" mnemonicParsing="false" onAction="#updateStudent" text="Update" />
       <Button fx:id="btnDelete" layoutX="268.0" layoutY="150.0" mnemonicParsing="false" onAction="#deleteStudent" text="Delete" />
-      <Label layoutX="23.0" layoutY="192.0" text="Label" />
+      <Label layoutX="23.0" layoutY="192.0" text="Search:" />
       <TextField fx:id="fieldSearch" layoutX="74.0" layoutY="188.0" prefHeight="25.0" prefWidth="257.0" promptText="Search..." />
       <TableView fx:id="tableView" layoutX="14.0" layoutY="231.0" onMouseClicked="#mouseClicked" prefHeight="252.0" prefWidth="346.0">
         <columns>
