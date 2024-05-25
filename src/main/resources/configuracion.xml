@@ -12,7 +12,7 @@ and open the template in the editor.
     <defaultConnection>9</defaultConnection>
     <!-- activeConnections is deprecated-->
     <activeConnections>22</activeConnections>
-        <connections default ="conn1">
+    <connections default ="conn1">
         <connection>
             <dbIdConn>conn1</dbIdConn>
             <dbDriver>org.mariadb.jdbc.Driver</dbDriver>
@@ -106,7 +106,7 @@ and open the template in the editor.
         <connection>
             <dbIdConn>conn11</dbIdConn>            
             <dbDriver>org.hsqldb.jdbc.JDBCDriver</dbDriver>
-            <dbUrl>jdbc:hsqldb:file:C:\Users\garfi\OneDrive\Documentos\hsqldbDbs\TestDb\Ejemplo</dbUrl>
+            <dbUrl>jdbc:hsqldb:file:C:\Users\garfi\OneDrive\Documentos\hsqldbDbs\TestDb\Ejemplo</dbUrl>                    
             <dbUsuario>SA</dbUsuario>
             <dbPassw></dbPassw>
             <dbPoolInicial></dbPoolInicial>
@@ -115,7 +115,10 @@ and open the template in the editor.
         <connection>
             <dbIdConn>conn12</dbIdConn>                                    
             <dbDriver>SQLite.JDBCDriver</dbDriver>
-            <dbUrl>jdbc:sqlite:C:\Users\garfi\OneDrive\Documentos\MyProyects\SqlLite\testDb.db</dbUrl>
+            <!-- 
+            <dbUrl>jdbc:hsqldb:file:C:\Users\garfi\OneDrive\Documentos\hsqldbDbs\TestDb\Ejemplo</dbUrl>
+                    -->            
+            <dbUrl>jdbc:sqlite:C:\Users\Ryzen9-Gaming\OneDrive\Documentos\MyProyects\SqlLite\testDb.db</dbUrl>
             <dbUsuario/>
             <dbPassw/>
             <dbPoolInicial/>

@@ -46,7 +46,7 @@ public class StudentDl extends Mapper {
     private final String FIND_BY_PK_STM = SELECT_STM + WHERE_BY_PK;
 
     public StudentDl() {
-        this.dm = DIContainer.getInstance().getDataManager(GlobalConstants.MARIADBCONN);
+        this.dm = DIContainer.getInstance().getDataManager(GlobalConstants.SQLITECONN2);
     }
 
     @Override
