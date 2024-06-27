@@ -6,7 +6,6 @@ module com.fvgprinc.app.crudfx {
     requires org.apache.commons.configuration2;
     requires commons.dbcp2;
     requires java.sql;    
-    requires oraclepki;
     requires com.fvgprinc.tools.db;
     requires com.fvgprinc.tools.string;
 

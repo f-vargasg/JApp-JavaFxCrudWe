@@ -21,7 +21,7 @@ public class App extends Application {
 
     public void start(Stage stage) throws IOException {
         // Init connections
-        DIContainer.registerDataManager(GlobalConstants.MARIADBCONN);
+        DIContainer.registerDataManager(GlobalConstants.DEFCONN);
         scene = new Scene(loadFXML("student"));
         stage.setTitle("Java Fx CRUD Application 2");
         sController.setStage(stage);

@@ -25,4 +25,6 @@ public class GlobalConstants {
 
     // Conection to HsqlDb
     public static final String HSQLDBCONN = "conn11";
+    
+    public static final String DEFCONN = SQLITECONN2;
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.fvgprinc.app.crudfx.dl;
 
 import com.fvgprinc.app.crudfx.be.StudentBe;
@@ -9,6 +5,7 @@ import com.fvgprinc.app.crudfx.globals.GlobalConstants;
 import com.fvgprinc.tools.db.DIContainer;
 import com.fvgprinc.tools.db.Mapper;
 import com.fvgprinc.tools.db.ParamAction;
+import com.fvgprinc.tools.db.ResultInsert;
 import com.fvgprinc.tools.string.MyCommonString;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -46,12 +43,20 @@ public class StudentDl extends Mapper {
     private final String FIND_BY_PK_STM = SELECT_STM + WHERE_BY_PK;
 
     public StudentDl() {
-        this.dm = DIContainer.getInstance().getDataManager(GlobalConstants.MARIADBCONN);
+        this.dm = DIContainer.getInstance().getDataManager(GlobalConstants.DEFCONN);
     }
 
     @Override
     public void insert(ArrayList<ParamAction> paramDLs) throws SQLException {
         doStatement(INSERT_STM, paramDLs);
+    }
+    
+    public ResultInsert insert2 (ArrayList<ParamAction> paramDLs) throws SQLException {
+         ResultInsert res;
+         
+         res = doStatementInsert(INSERT_STM, paramDLs);
+         
+         return res;
     }
 
     @Override

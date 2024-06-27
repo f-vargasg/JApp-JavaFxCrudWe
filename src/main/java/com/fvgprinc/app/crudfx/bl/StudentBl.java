@@ -7,6 +7,7 @@ package com.fvgprinc.app.crudfx.bl;
 import com.fvgprinc.app.crudfx.be.StudentBe;
 import com.fvgprinc.app.crudfx.dl.StudentDl;
 import com.fvgprinc.tools.db.ParamAction;
+import com.fvgprinc.tools.db.ResultInsert;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javafx.collections.FXCollections;
