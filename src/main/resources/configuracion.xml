@@ -115,10 +115,7 @@ and open the template in the editor.
         <connection>
             <dbIdConn>conn12</dbIdConn>                                    
             <dbDriver>SQLite.JDBCDriver</dbDriver>
-            <!-- 
-            <dbUrl>jdbc:hsqldb:file:C:\Users\garfi\OneDrive\Documentos\hsqldbDbs\TestDb\Ejemplo</dbUrl>
-                    -->            
-            <dbUrl>jdbc:sqlite:C:\Users\Ryzen9-Gaming\OneDrive\Documentos\MyProyects\SqlLite\testDb.db</dbUrl>
+            <dbUrl>jdbc:sqlite:C:\Users\garfi\OneDrive\Documentos\MyProyects\SqlLite\testDb.db</dbUrl>
             <dbUsuario/>
             <dbPassw/>
             <dbPoolInicial/>
